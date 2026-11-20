@@ -14,10 +14,19 @@
 </head>
 <body>
 <h1>Justice Scanner</h1>
-<p>Scan a barcode to see the company behind a product and how it is rated, with the sources for every rating.</p>
+<p>Scan a barcode to see what is on record about the companies behind a product, with the source for every finding.</p>
+<p id="invite" hidden>A friend invited you. When the app asks for an invite code during setup, enter <strong id="code"></strong>.</p>
+<script>
+  // A shared link carries the sender's invite code. Show it only if it looks like one.
+  var ref = new URLSearchParams(location.search).get('ref') || '';
+  if (/^[A-Z2-9]{6}$/.test(ref)) {
+    document.getElementById('code').textContent = ref;
+    document.getElementById('invite').hidden = false;
+  }
+</script>
 
 <h2>Support</h2>
-<p>Questions, problems, or a rating you think is wrong: email <a href="mailto:metcalfholdings2@gmail.com">metcalfholdings2@gmail.com</a>.</p>
+<p>Questions, problems, or a result you think is wrong: email <a href="mailto:metcalfholdings2@gmail.com">metcalfholdings2@gmail.com</a>.</p>
 <p>To manage or cancel a subscription, open Settings on your iPhone, tap your name, then Subscriptions.</p>
 
 <h2>Legal</h2>
